@@ -1854,4 +1854,16 @@ footer { margin-top: 60px; }
         border-bottom-right-radius: 45px;
       }
       .author-name { font-size: 28px; }
+
     }
+
+@media (max-width: 321px) {
+  .section.trending {
+    padding-bottom: 50px;
+  }
+
+  footer {
+    margin-top: 40px !important;
+    position: relative;
+  }
+}
