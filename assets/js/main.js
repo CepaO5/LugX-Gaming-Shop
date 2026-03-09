@@ -548,7 +548,17 @@ async function renderShop() {
   
   if (shopGrid) {
     shopGrid.isotope({ filter: "*" });
+    shopGrid.isotope("layout");
   }
+  setTimeout(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, 200);
+
+  window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.dispatchEvent(new Event("resize"));
+  }, 300);
+});
 }
 
 
@@ -682,5 +692,6 @@ console.log("END OF main.js reached");
   if (pdDesc) pdDesc.textContent = game.desc || "Opis nije dostupan.";
   if (pdGameId) pdGameId.textContent = game.code || `GAME-${game.id}`;
   if (pdGenre) pdGenre.textContent = game.category;
+
 
 })();
